@@ -1,0 +1,41 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{ 
+		compare();
+	}
+	public static string askname()
+        {
+            string name=Console.ReadLine();
+		    return name;
+        }
+	public static byte askage()
+	{byte age=Convert.ToByte(Console.ReadLine()); return age;}
+	
+	public static void compare(){ 
+                          string[] names=new string[2]; //Adlar
+		byte [] ages=new byte[2]; // yaşlar
+
+		Console.WriteLine("1 ci Ad daxil edin");
+		names[0]=askname();
+	    Console.WriteLine("2 ci Ad daxil edin");
+	    names[1]=askname();
+	 Console.WriteLine("1 ci yaş daxil edin");
+	    ages[0]=askage();
+	    Console.WriteLine("2 ci yaş daxil edin");
+        ages[1]=askage();	
+Console.WriteLine("Kim böyükdür?");
+		link1:
+		string cavab=Console.ReadLine();
+		if (cavab==names[0]|cavab==names[1])
+		{int f=ages[0]-ages[1];
+		if (f>0) {Console.WriteLine(names[0]+" "+names[1]+"dən "+f+ " il böyükdür");}
+		else if (f<0){Console.WriteLine(names[1]+" "+names[0]+"dən "+(f=f*-1)+ " il böyükdür");}
+		else if (f==0){Console.WriteLine("Xeyr, "+names[0]+" və "+names[1]+" eyni yaşdadır");}}
+		else {Console.WriteLine("Siyahıda olan adları seçin"); goto link1;}
+}
+
+}
+
